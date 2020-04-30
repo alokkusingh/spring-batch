@@ -1,23 +1,17 @@
 package com.alok.spring.batch.model;
 
-import lombok.*;
-
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import java.util.Date;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import lombok.ToString;
 
 @Data
-@Entity
 @NoArgsConstructor
 @AllArgsConstructor
 @ToString
-public class Employee {
-    @Id
+public class EmployeeDataBean {
     private Integer id;
     private String name;
-    private String departmentCode;
     private String department;
     private String salary;
-    private Date time;
-
 }

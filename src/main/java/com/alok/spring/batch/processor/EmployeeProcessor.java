@@ -1,6 +1,7 @@
 package com.alok.spring.batch.processor;
 
 import com.alok.spring.batch.model.Employee;
+import com.alok.spring.batch.model.EmployeeDataBean;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.batch.item.ItemProcessor;
 import org.springframework.stereotype.Component;
@@ -11,7 +12,7 @@ import java.util.Map;
 
 @Component
 @Slf4j
-public class EmployeeProcessor implements ItemProcessor<Employee, Employee> {
+public class EmployeeProcessor implements ItemProcessor<EmployeeDataBean, Employee> {
 
     private static final Map<String, String > DEPARTMENT_MAP = new HashMap<>();
 
@@ -22,9 +23,14 @@ public class EmployeeProcessor implements ItemProcessor<Employee, Employee> {
     }
 
     @Override
-    public Employee process(Employee employee) throws Exception {
+    public Employee process(EmployeeDataBean employeeData) throws Exception {
 
-        String departCode = employee.getDepartment();
+        Employee employee = new Employee();
+        employee.setId(employeeData.getId());
+        employee.setName(employeeData.getName());
+        employee.setSalary(employeeData.getSalary());
+        employee.setDepartmentCode(employeeData.getDepartment());
+        String departCode = employeeData.getDepartment();
         String department = DEPARTMENT_MAP.get(departCode);
         employee.setDepartment(department);
         employee.setTime(new Date());

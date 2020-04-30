@@ -2,7 +2,6 @@ package com.alok.spring.batch.controller;
 
 import com.alok.spring.batch.model.Employee;
 import com.alok.spring.batch.repository.EmployeeRepository;
-import jdk.nashorn.internal.objects.annotations.Getter;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.batch.core.*;
 import org.springframework.batch.core.launch.JobLauncher;
