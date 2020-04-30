@@ -2,14 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="221a51d6-b978-4402-ad16-7446c61cd299" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/alok/spring/batch/model/EmployeeDataBean.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/alok/spring/batch/processor/EmployeeDataReader.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/alok/spring/batch/processor/EmployeeLineMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/alok/spring/batch/model/Student.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/alok/spring/batch/processor/StudentDataReader.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/alok/spring/batch/processor/StudentLineMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/alok/spring/batch/processor/StudentProcessor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/alok/spring/batch/processor/StudentWriter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/student.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/alok/spring/batch/BatchDemoApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/alok/spring/batch/BatchDemoApplication.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/alok/spring/batch/config/SpringBatchConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/alok/spring/batch/config/SpringBatchConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/alok/spring/batch/model/Employee.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/alok/spring/batch/model/Employee.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/alok/spring/batch/processor/EmployeeProcessor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/alok/spring/batch/processor/EmployeeProcessor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/alok/spring/batch/controller/EmployeeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/alok/spring/batch/controller/EmployeeController.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -44,12 +46,18 @@
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/resources" />
     <property name="restartRequiresConfirmation" value="false" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.alok.spring.batch.processor" />
+      <recent name="com.alok.spring.batch.repository" />
       <recent name="com.alok.spring.batch.model" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/resources" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -136,7 +144,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/alok/spring/batch/BatchDemoApplication.java</url>
-          <line>14</line>
+          <line>15</line>
           <option name="timeStamp" value="1" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
