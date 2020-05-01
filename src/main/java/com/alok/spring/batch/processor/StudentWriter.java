@@ -1,8 +1,6 @@
 package com.alok.spring.batch.processor;
 
-import com.alok.spring.batch.model.Employee;
 import com.alok.spring.batch.model.Student;
-import com.alok.spring.batch.repository.EmployeeRepository;
 import com.alok.spring.batch.repository.StudentRepository;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.batch.item.ItemWriter;

@@ -1,7 +1,5 @@
 package com.alok.spring.batch.processor;
 
-import com.alok.spring.batch.model.Employee;
-import com.alok.spring.batch.model.EmployeeDataBean;
 import com.alok.spring.batch.model.Student;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.batch.item.ItemProcessor;
