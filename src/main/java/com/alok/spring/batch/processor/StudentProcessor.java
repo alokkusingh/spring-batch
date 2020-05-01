@@ -22,16 +22,14 @@ public class StudentProcessor implements ItemProcessor<Student, Student> {
     }
 
     @Override
-    public Student process(Student student) throws Exception {
+    public Student process(Student student) {
 
-        String departCode = student.getDepartment();
-        String department = DEPARTMENT_MAP.get(departCode);
-        student.setDepartment(department);
-        student.setTime(new Date());
-
-        if (log.isDebugEnabled())
-            log.debug("Converted from [{}] to [{}]", departCode, department);
-
-        return student;
+        return Student.builder()
+                .id(student.getId())
+                .name(student.getName())
+                .department(DEPARTMENT_MAP.get(student.getDepartment()))
+                .marks(student.getMarks())
+                .time(new Date())
+                .build();
     }
 }
