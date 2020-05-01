@@ -25,18 +25,17 @@ public class EmployeeProcessor implements ItemProcessor<EmployeeDataBean, Employ
     @Override
     public Employee process(EmployeeDataBean employeeData) throws Exception {
 
-        Employee employee = new Employee();
-        employee.setId(employeeData.getId());
-        employee.setName(employeeData.getName());
-        employee.setSalary(employeeData.getSalary());
-        employee.setDepartmentCode(employeeData.getDepartment());
-        String departCode = employeeData.getDepartment();
-        String department = DEPARTMENT_MAP.get(departCode);
-        employee.setDepartment(department);
-        employee.setTime(new Date());
+        Employee employee = Employee.builder()
+                .id(employeeData.getId())
+                .name(employeeData.getName())
+                .salary(employeeData.getSalary())
+                .departmentCode(employeeData.getDepartment())
+                .department(DEPARTMENT_MAP.get(employeeData.getDepartment()))
+                .time(new Date())
+                .build();
 
         if (log.isDebugEnabled())
-            log.debug("Converted from [{}] to [{}]", departCode, department);
+            log.debug("Converted from [{}] to [{}]", employeeData.getDepartment(), employee.getDepartment());
 
         return employee;
     }
