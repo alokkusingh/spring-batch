@@ -2,7 +2,6 @@ package com.alok.spring.batch.config;
 
 import com.alok.spring.batch.model.Employee;
 import com.alok.spring.batch.model.EmployeeDataBean;
-import com.alok.spring.batch.model.Student;
 import org.springframework.batch.core.Job;
 import org.springframework.batch.core.Step;
 import org.springframework.batch.core.configuration.annotation.EnableBatchProcessing;
@@ -17,7 +16,7 @@ import org.springframework.context.annotation.Configuration;
 
 @Configuration
 @EnableBatchProcessing
-public class SpringBatchConfig {
+public class EmployeeBatchConfig {
 
     @Bean("EmployeeJob")
     public Job employeeJob(JobBuilderFactory jobBuilderFactory,
@@ -70,24 +69,4 @@ public class SpringBatchConfig {
 
         return defaultLineMapper;
     }*/
-
-    @Bean("StudentJob")
-    public Job studentJob(JobBuilderFactory jobBuilderFactory,
-                           StepBuilderFactory stepBuilderFactory,
-                           ItemReader<Student> itemReader,
-                           ItemProcessor<Student, Student> itemProcessor,
-                           ItemWriter<Student> itemWriter
-    ) {
-        Step step = stepBuilderFactory.get("Student-ETL-file-load")
-                .<Student,Student>chunk(100)
-                .reader(itemReader)
-                .processor(itemProcessor)
-                .writer(itemWriter)
-                .build();
-
-        return jobBuilderFactory.get("Student-ETL-Load")
-                .incrementer(new RunIdIncrementer())
-                .start(step)
-                .build();
-    }
 }
