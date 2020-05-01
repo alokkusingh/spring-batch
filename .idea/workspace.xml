@@ -2,13 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="221a51d6-b978-4402-ad16-7446c61cd299" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/alok/spring/batch/config/StudentBatchConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/student2.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/alok/spring/batch/config/SpringBatchConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/alok/spring/batch/config/EmployeeBatchConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/alok/spring/batch/processor/StudentDataReader.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/alok/spring/batch/processor/StudentLineMapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/alok/spring/batch/config/StudentBatchConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/alok/spring/batch/config/StudentBatchConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -50,8 +45,8 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="com.alok.spring.batch.config" />
       <recent name="com.alok.spring.batch.processor" />
+      <recent name="com.alok.spring.batch.config" />
       <recent name="com.alok.spring.batch.repository" />
       <recent name="com.alok.spring.batch.model" />
     </key>
@@ -125,6 +120,21 @@
       <option name="presentableId" value="Default" />
       <updated>1588146961598</updated>
     </task>
+    <task id="LOCAL-00001" summary="Minor update">
+      <created>1588304576218</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1588304576219</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Added file archiving tasklet in next step">
+      <created>1588306380155</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1588306380155</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -138,12 +148,18 @@
       </map>
     </option>
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Minor update" />
+    <MESSAGE value="Added file archiving tasklet in next step" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added file archiving tasklet in next step" />
+    <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
+  </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/alok/spring/batch/config/StudentBatchConfig.java</url>
-          <line>56</line>
+          <line>69</line>
           <option name="timeStamp" value="4" />
         </line-breakpoint>
       </breakpoints>

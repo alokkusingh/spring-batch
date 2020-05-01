@@ -31,6 +31,9 @@ public class StudentBatchConfig {
     @Value("file:${file.path.student}")
     private Resource[] resources;
 
+    @Value("${fields.name.student:#{null}}")
+    private String[] fieldNames;
+
     @Bean("StudentJob")
     public Job studentJob(JobBuilderFactory jobBuilderFactory,
                            StepBuilderFactory stepBuilderFactory,
@@ -98,7 +101,8 @@ public class StudentBatchConfig {
         DelimitedLineTokenizer lineTokenizer = new DelimitedLineTokenizer();
         lineTokenizer.setDelimiter(",");
         lineTokenizer.setStrict(false);
-        lineTokenizer.setNames(new String[]{"id", "name", "department", "marks"});
+        //lineTokenizer.setNames(new String[]{"id", "name", "department", "marks"});
+        lineTokenizer.setNames(fieldNames);
 
         BeanWrapperFieldSetMapper<Student> fieldSetMapper = new BeanWrapperFieldSetMapper<>();
         fieldSetMapper.setTargetType(Student.class);
