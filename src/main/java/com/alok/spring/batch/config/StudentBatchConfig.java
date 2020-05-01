@@ -1,6 +1,7 @@
 package com.alok.spring.batch.config;
 
 import com.alok.spring.batch.model.Student;
+import com.alok.spring.batch.processor.FileArchiveTasklet;
 import org.springframework.batch.core.Job;
 import org.springframework.batch.core.Step;
 import org.springframework.batch.core.configuration.annotation.EnableBatchProcessing;
@@ -20,16 +21,15 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.core.io.Resource;
-import org.springframework.core.io.support.PathMatchingResourcePatternResolver;
-import org.springframework.core.io.support.ResourcePatternResolver;
-
-import java.io.IOException;
 
 @Configuration
 @EnableBatchProcessing
 public class StudentBatchConfig {
     @Value("${file.path.student:#{null}}")
     private String filePath;
+
+    @Value("file:${file.path.student}")
+    private Resource[] resources;
 
     @Bean("StudentJob")
     public Job studentJob(JobBuilderFactory jobBuilderFactory,
@@ -38,29 +38,39 @@ public class StudentBatchConfig {
                            ItemProcessor<Student, Student> itemProcessor,
                            ItemWriter<Student> itemWriter
     ) {
-        Step step = stepBuilderFactory.get("Student-ETL-file-load")
+        Step step1 = stepBuilderFactory.get("Student-ETL-file-load")
                 .<Student,Student>chunk(100)
                 .reader(itemsReader)
                 .processor(itemProcessor)
                 .writer(itemWriter)
                 .build();
 
+
+        FileArchiveTasklet archiveTask = new FileArchiveTasklet();
+        archiveTask.setResources(resources);
+        Step step2 = stepBuilderFactory.get("Student-ETL-file-archive")
+                .tasklet(archiveTask)
+                .build();
+
         return jobBuilderFactory.get("Student-ETL-Load")
                 .incrementer(new RunIdIncrementer())
-                .start(step)
+                .start(step1)
+                .next(step2)
                 .build();
     }
+
+
 
     @Bean
     public MultiResourceItemReader<Student> itemsReader() {
 
-        ResourcePatternResolver patternResolver = new PathMatchingResourcePatternResolver();
+        /*ResourcePatternResolver patternResolver = new PathMatchingResourcePatternResolver();
         Resource[] resources = null;
         try {
             resources = patternResolver.getResources("file:" + filePath );
         } catch (IOException e) {
             e.printStackTrace();
-        }
+        }*/
         MultiResourceItemReader<Student> reader = new MultiResourceItemReader<>();
         reader.setResources(resources);
         reader.setStrict(false);
